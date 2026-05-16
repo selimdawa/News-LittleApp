@@ -1,11 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
+    //id("kotlin-kapt")
     //id("com.google.dagger.hilt.android")
-    id("dagger.hilt.android.plugin")
+    //id("dagger.hilt.android.plugin")
     //id("org.jetbrains.kotlin.plugin.serialization")
     //id("kotlin-parcelize")
+
+
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -64,8 +68,13 @@ dependencies {
     implementation(libs.androidx.cardview)
     // Hilt dependencies
     //Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.44.2")     //Dagger Hilt
-    kapt("com.google.dagger:hilt-android-compiler:2.44.2")      //Dagger Hilt Compiler
+    implementation("com.google.dagger:hilt-android:2.59.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.59.2")
+    ksp("androidx.hilt:hilt-compiler:1.3.0")                          //Hilt Compiler
+    ksp("com.google.dagger:hilt-compiler:2.59.2")              //Hilt Compiler
+
+    //implementation("com.google.dagger:hilt-android:2.44.2")     //Dagger Hilt
+    //kapt("com.google.dagger:hilt-android-compiler:2.44.2")      //Dagger Hilt Compiler
     //kapt("androidx.hilt:hilt-compiler:1.0.0")                          //Hilt Compiler
     //kapt("com.google.dagger:hilt-compiler:2.44.2")              //Hilt Compiler
     //retrofit dependencies
@@ -81,6 +90,11 @@ dependencies {
 
     //implementation("io.coil-kt.coil3:coil-compose:3.1.0")
     //implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
+    //Life Cycle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")     //Life Cycle Extensions
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
 
     //OkHttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0")) //OkHttp
