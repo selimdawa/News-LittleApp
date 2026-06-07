@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/everythingFragment"
-        android:name="com.flatcode.simpleadvancedapps.news.ui.fragments.everything.EverythingFragment"
+        android:name="com.littleapp.news.ui.fragments.everything.EverythingFragment"
         android:label="Everything"
         tools:layout="@layout/fragment_everything" />
 
     <fragment
         android:id="@+id/topArticlesFragment"
-        android:name="com.flatcode.simpleadvancedapps.news.ui.fragments.toparticles.TopArticlesFragment"
+        android:name="com.littleapp.news.ui.fragments.toparticles.TopArticlesFragment"
         android:label="Top Articles"
         tools:layout="@layout/fragment_top_articles" />
 

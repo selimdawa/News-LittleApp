@@ -26,7 +26,6 @@ class EverythingFragment :
         subscribesEverything()
     }
 
-
     private fun setupRecyclerView() {
         binding.recyclerView.adapter = adapter
     }
