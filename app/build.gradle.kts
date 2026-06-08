@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.cardview)
+    //Image
+    implementation(libs.coil)                            //Coil
     //Dagger - Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
@@ -81,7 +83,6 @@ dependencies {
     implementation(libs.okhttp)                      //OkHttp
     implementation(libs.logging.interceptor)         //OkHttp
     //Others
-    implementation(libs.coil)                            //Coil
     implementation(libs.timber)              //Timber Log
     implementation(libs.viewbindingpropertydelegate.noreflection) //Binding
 }

@@ -1,7 +1,7 @@
 [versions]
 agp = "9.2.1"
 cardview = "1.0.0"
-coil = "2.2.2"
+coil = "2.7.0"
 coreKtx = "1.18.0"
 hilt = "2.59.2"
 hiltAndroidCompiler = "2.59.2"
