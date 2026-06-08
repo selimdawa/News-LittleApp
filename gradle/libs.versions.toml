@@ -24,7 +24,7 @@ legacySupportV4 = "1.0.0"
 retrofit = "3.0.0"
 timber = "5.0.1"
 viewbindingpropertydelegateNoreflection = "1.5.9"
-ksp = "2.3.7"
+ksp = "2.3.8"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
