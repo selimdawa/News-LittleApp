@@ -83,4 +83,5 @@ dependencies {
     //Others
     implementation(libs.timber)              //Timber Log
     implementation(libs.viewbindingpropertydelegate.noreflection) //Binding
+    ksp(libs.kotlin.metadata.jvm)
 }
