@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.navigation.safeargs.kotlin)
@@ -56,15 +55,13 @@ dependencies {
     //Layout
     implementation(libs.androidx.constraintlayout)
     implementation(libs.material)
-    implementation(libs.androidx.legacy.support.v4)
-    implementation(libs.androidx.cardview)
     //Image
     implementation(libs.coil)                            //Coil
     //Dagger - Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-    ksp(libs.androidx.hilt.compiler)                          //Hilt Compiler
-    ksp(libs.hilt.compiler)              //Hilt Compiler
+    //ksp(libs.androidx.hilt.compiler)                          //Hilt Compiler
+    //ksp(libs.hilt.compiler)              //Hilt Compiler
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -72,7 +69,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)  //Navigation Fragment
     implementation(libs.androidx.navigation.ui.ktx) //Navigation Components
     //Life Cycle
-    implementation(libs.androidx.lifecycle.extensions1)     //Life Cycle Extensions
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -83,5 +79,4 @@ dependencies {
     //Others
     implementation(libs.timber)              //Timber Log
     implementation(libs.viewbindingpropertydelegate.noreflection) //Binding
-    ksp(libs.kotlin.metadata.jvm)
 }
