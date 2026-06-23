@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.littleapp.news.databinding.ItemTopArticlesBinding
 import com.littleapp.news.base.BaseDiffUtilItemCallback
-import com.littleapp.news.models.toparticles.TopArticlesNewsItem
+import com.littleapp.news.models.TopArticlesNewsItem
 
 class TopArticlesAdapter :
     ListAdapter<TopArticlesNewsItem, TopArticlesAdapter.TopArticlesViewHolder>(
@@ -27,6 +27,7 @@ class TopArticlesAdapter :
 
     class TopArticlesViewHolder(private val binding: ItemTopArticlesBinding) :
         ViewHolder(binding.root) {
+
         fun onBind(model: TopArticlesNewsItem) {
             binding.ivCompany.load(model.image)
             binding.tvTittle.text = model.tittle

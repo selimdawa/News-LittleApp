@@ -1,8 +1,6 @@
 package com.littleapp.news.data.remote
 
 import com.littleapp.news.Unit.DATA
-import com.littleapp.news.data.remote.apiservices.NewsApiServices
-import com.littleapp.news.data.remote.interceptors.ApiKeyInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,12 +9,13 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitClient {
 
-    private val retrofit =
-        Retrofit.Builder().baseUrl(DATA.BASE_URL_NEWS).client(provideOkHttpClient())
-            .addConverterFactory(GsonConverterFactory.create()).build()
+    private val retrofit = Retrofit.Builder()
+        .baseUrl(DATA.BASE_URL_NEWS)
+        .client(provideOkHttpClient())
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
-    private fun provideOkHttpClient() = OkHttpClient()
-        .newBuilder()
+    private fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(ApiKeyInterceptor())
         .addInterceptor(provideLoggingInterceptor())
         .callTimeout(30, TimeUnit.SECONDS)
@@ -25,8 +24,10 @@ class RetrofitClient {
         .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 
-    private fun provideLoggingInterceptor() =
-        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    private fun provideLoggingInterceptor(): HttpLoggingInterceptor =
+        HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
 
-    fun provideNewsApiService() = retrofit.create(NewsApiServices::class.java)!!
+    fun provideNewsApiService(): NewsApiServices = retrofit.create(NewsApiServices::class.java)
 }

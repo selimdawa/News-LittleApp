@@ -1,7 +1,7 @@
-package com.littleapp.news.models.everything
+package com.littleapp.news.models
 
-import com.littleapp.news.base.IBaseDiffModel
 import com.google.gson.annotations.SerializedName
+import com.littleapp.news.base.IBaseDiffModel
 
 data class EverythingNewsItem(
     @SerializedName("id")

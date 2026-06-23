@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.littleapp.news.databinding.ItemEverythingListBinding
 import com.littleapp.news.base.BaseDiffUtilItemCallback
-import com.littleapp.news.models.everything.EverythingNewsItem
+import com.littleapp.news.models.EverythingNewsItem
 
 class EverythingAdapter :
     ListAdapter<EverythingNewsItem, EverythingAdapter.EverythingViewHolder>(BaseDiffUtilItemCallback()) {
@@ -24,6 +24,7 @@ class EverythingAdapter :
 
     class EverythingViewHolder(private val binding: ItemEverythingListBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun onBind(model: EverythingNewsItem) {
             binding.tvTittle.text = model.tittle
         }

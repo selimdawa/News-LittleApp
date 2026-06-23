@@ -1,4 +1,4 @@
-package com.littleapp.news.data.remote.interceptors
+package com.littleapp.news.data.remote
 
 import com.littleapp.news.Unit.DATA
 import okhttp3.Interceptor

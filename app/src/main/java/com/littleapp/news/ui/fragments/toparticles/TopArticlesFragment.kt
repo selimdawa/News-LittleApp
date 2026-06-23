@@ -1,7 +1,8 @@
 package com.littleapp.news.ui.fragments.toparticles
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.viewModels
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.littleapp.news.R
 import com.littleapp.news.databinding.FragmentTopArticlesBinding
 import com.littleapp.news.base.BaseFragment
@@ -14,9 +15,18 @@ import timber.log.Timber
 class TopArticlesFragment :
     BaseFragment<FragmentTopArticlesBinding, TopArticlesViewModel>(R.layout.fragment_top_articles) {
 
-    override val binding by viewBinding(FragmentTopArticlesBinding::bind)
+    private var _binding: FragmentTopArticlesBinding? = null
+    override val binding get() = _binding!!
+
     override val viewModel: TopArticlesViewModel by viewModels()
     private val adapter = TopArticlesAdapter()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        _binding = FragmentTopArticlesBinding.bind(view)
+        super.onViewCreated(view, savedInstanceState)
+        initialize()
+        setupSubscribes()
+    }
 
     override fun initialize() {
         setupRecyclerView()
@@ -31,17 +41,24 @@ class TopArticlesFragment :
     }
 
     private fun subscribesTopArticles() {
-        viewModel.fetchTopArticles().observe(viewLifecycleOwner) {
-            when (it) {
+        viewModel.fetchTopArticles().observe(viewLifecycleOwner) { resource ->
+            when (resource) {
                 is Resource.Error -> {
-                    Timber.e(it.message.toString())
+                    Timber.e(resource.message.toString())
                 }
                 is Resource.Loading -> {}
                 is Resource.Success -> {
-                    adapter.submitList(it.data?.articles)
+                    resource.data?.articles?.let { articles ->
+                        adapter.submitList(articles)
+                    }
                 }
                 else -> {}
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

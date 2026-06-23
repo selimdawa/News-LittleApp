@@ -34,13 +34,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-        }
-    }
     buildFeatures {
-        dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -60,8 +55,6 @@ dependencies {
     //Dagger - Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-    //ksp(libs.androidx.hilt.compiler)                          //Hilt Compiler
-    //ksp(libs.hilt.compiler)              //Hilt Compiler
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -78,5 +71,4 @@ dependencies {
     implementation(libs.logging.interceptor)         //OkHttp
     //Others
     implementation(libs.timber)              //Timber Log
-    implementation(libs.viewbindingpropertydelegate.noreflection) //Binding
 }

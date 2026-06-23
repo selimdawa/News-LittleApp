@@ -1,9 +1,9 @@
-package com.littleapp.news.data.remote.apiservices
+package com.littleapp.news.data.remote
 
 import com.littleapp.news.Unit.DATA
+import com.littleapp.news.models.EverythingNewsItem
 import com.littleapp.news.models.NewsResponse
-import com.littleapp.news.models.everything.EverythingNewsItem
-import com.littleapp.news.models.toparticles.TopArticlesNewsItem
+import com.littleapp.news.models.TopArticlesNewsItem
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

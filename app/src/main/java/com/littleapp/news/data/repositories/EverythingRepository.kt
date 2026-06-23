@@ -1,7 +1,7 @@
 package com.littleapp.news.data.repositories
 
 import com.littleapp.news.base.BaseRepository
-import com.littleapp.news.data.remote.apiservices.NewsApiServices
+import com.littleapp.news.data.remote.NewsApiServices
 import javax.inject.Inject
 
 class EverythingRepository @Inject constructor(private val service: NewsApiServices) :
