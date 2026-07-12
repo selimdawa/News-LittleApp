@@ -52,19 +52,25 @@ dependencies {
     implementation(libs.material)
     //Image
     implementation(libs.coil)                            //Coil
+    //Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    //Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    //Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     //Dagger - Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.navigation.fragment)
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    //Navigation
-    implementation(libs.androidx.navigation.fragment.ktx)  //Navigation Fragment
-    implementation(libs.androidx.navigation.ui.ktx) //Navigation Components
-    //Life Cycle
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     //OkHttp
     implementation(platform(libs.okhttp.bom)) //OkHttp
     implementation(libs.okhttp)                      //OkHttp
