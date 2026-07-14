@@ -1,11 +1,12 @@
 package com.littleapp.news.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.littleapp.news.base.IBaseDiffModel
 
+@Entity(tableName = "everything_news")
 data class EverythingNewsItem(
-    @SerializedName("id")
-    override val id: Int,
-    @SerializedName("title")
-    val tittle: String,
+    @PrimaryKey(autoGenerate = true) @SerializedName("id") override val id: Int,
+    @SerializedName("title") val title: String,
 ) : IBaseDiffModel<Int>

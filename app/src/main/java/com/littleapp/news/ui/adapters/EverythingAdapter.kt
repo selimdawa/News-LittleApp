@@ -26,7 +26,7 @@ class EverythingAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(model: EverythingNewsItem) {
-            binding.tvTittle.text = model.tittle
+            binding.tvTittle.text = model.title
         }
     }
 }

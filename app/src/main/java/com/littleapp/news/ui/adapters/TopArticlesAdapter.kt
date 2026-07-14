@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
-import com.littleapp.news.databinding.ItemTopArticlesBinding
 import com.littleapp.news.base.BaseDiffUtilItemCallback
+import com.littleapp.news.databinding.ItemTopArticlesBinding
 import com.littleapp.news.models.TopArticlesNewsItem
 
 class TopArticlesAdapter :
@@ -30,7 +30,7 @@ class TopArticlesAdapter :
 
         fun onBind(model: TopArticlesNewsItem) {
             binding.ivCompany.load(model.image)
-            binding.tvTittle.text = model.tittle
+            binding.tvTittle.text = model.title
         }
     }
 }

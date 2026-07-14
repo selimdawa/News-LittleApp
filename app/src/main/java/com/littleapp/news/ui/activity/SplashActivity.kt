@@ -1,38 +1,34 @@
 package com.littleapp.news.ui.activity
 
-import android.content.Context
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.littleapp.news.Unit.CLASS
-import com.littleapp.news.Unit.THEME
-import com.littleapp.news.Unit.VOID
+import androidx.lifecycle.lifecycleScope
 import com.littleapp.news.databinding.ActivitySplashBinding
+import com.littleapp.news.utils.applyAppTheme
+import com.littleapp.news.utils.launchActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
-    private val context: Context = this@SplashActivity
-
-    private val timePerSecond = 2
-    private val timeFinal = TIME_PER_MILLIS * timePerSecond
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        THEME.setThemeOfApp(context)
+        applyAppTheme()
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler(Looper.getMainLooper()).postDelayed({ launch() }, timeFinal.toLong())
-    }
-
-    private fun launch() {
-        VOID.Intent1(context, CLASS.MAIN)
-        finish()
+        lifecycleScope.launch {
+            delay(SPLASH_DELAY)
+            launchActivity(MainActivity::class.java, finish = true)
+        }
     }
 
     companion object {
-        private const val TIME_PER_MILLIS = 1000
+        private val SPLASH_DELAY = 2.seconds
     }
 }

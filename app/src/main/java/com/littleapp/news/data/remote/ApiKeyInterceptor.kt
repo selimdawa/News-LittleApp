@@ -1,16 +1,21 @@
 package com.littleapp.news.data.remote
 
-import com.littleapp.news.Unit.DATA
+import com.littleapp.news.utils.Constants
 import okhttp3.Interceptor
 import okhttp3.Response
 
 class ApiKeyInterceptor : Interceptor {
-
     override fun intercept(chain: Interceptor.Chain): Response {
-        var request = chain.request()
-        val url = request.url.newBuilder()
-            .addQueryParameter("X-Api-Key", DATA.API_NEWS).build()
-        request = request.newBuilder().url(url).build()
-        return chain.proceed(request)
+        val originalRequest = chain.request()
+        val originalUrl = originalRequest.url
+        
+        val url = originalUrl.newBuilder()
+            .addQueryParameter("apiKey", Constants.API_NEWS)
+            .build()
+            
+        val requestBuilder = originalRequest.newBuilder()
+            .url(url)
+            
+        return chain.proceed(requestBuilder.build())
     }
 }
