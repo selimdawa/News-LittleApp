@@ -1,5 +1,5 @@
 [versions]
-agp = "9.4.0"
+agp = "9.4.1"
 coil = "2.7.0"
 coreKtx = "1.19.0"
 hilt = "2.60.1"
@@ -17,7 +17,7 @@ okhttpBom = "5.4.0"
 preferenceKtx = "1.2.1"
 retrofit = "3.0.0"
 timber = "5.0.1"
-ksp = "2.3.11"
+ksp = "2.3.12"
 coroutines = "1.11.0"
 room = "2.8.4"
 
