@@ -1,4 +1,4 @@
-<h1 align="center">News - Little App</h1>
+﻿<h1 align="center">News - Little App</h1>
 
 <p align="center">
  <a><img alt="Min SDK" src="https://img.shields.io/badge/Min SDK-24-020290?logo=android&logoColor=white"/></a>
@@ -13,7 +13,7 @@ One | Two | Three
 ![](https://raw.githubusercontent.com/selimdawa/SimpleAdvancedAppsKotlin/main/UI/52.jpg) | ![](https://raw.githubusercontent.com/selimdawa/SimpleAdvancedAppsKotlin/main/UI/53.jpg) | ![](https://raw.githubusercontent.com/selimdawa/SimpleAdvancedAppsKotlin/main/UI/54.jpg) | 
 
 - [Simple Advanced Apps - Kotlin](https://github.com/selimdawa/SimpleAdvancedAppsKotlin/)
-
+- [Simple Compose Apps - Kotlin](https://github.com/selimdawa/SimpleComposeApps/)
 
 ---
 
